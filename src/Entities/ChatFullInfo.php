@@ -35,9 +35,14 @@ namespace Longman\TelegramBot\Entities;
  * @method int             getLinkedChatId()                       Optional. Unique identifier for the linked chat, i.e. the discussion group identifier for a channel and vice versa; for supergroups and channel chats. Returned only in getChat.
  * @method ChatLocation    getLocation()                           Optional. For supergroups, the location to which the supergroup is connected. Returned only in getChat.
  * @method int             getMaxReactionCount()                   Optional. The maximum number of reactions that can be set on a message in the chat
+ * @method bool            getCanSendPaidMedia()                   Optional. True, if the chat allows sending paid media. Returned only in getChat.
  */
 class ChatFullInfo extends Chat
 {
+    /**
+     * @var bool|null Optional. True, if the chat allows sending paid media. Returned only in getChat.
+     */
+    protected $can_send_paid_media;
     /**
      * {@inheritdoc}
      */

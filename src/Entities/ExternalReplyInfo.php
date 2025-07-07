@@ -39,9 +39,14 @@ namespace Longman\TelegramBot\Entities;
  * @method Location           getLocation()           Optional. Message is a shared location, information about the location
  * @method Poll               getPoll()               Optional. Message is a native poll, information about the poll
  * @method Venue              getVenue()              Optional. Message is a venue, information about the venue
+ * @method PaidMediaInfo      getPaidMedia()          Optional. Message is a paid media purchase, information about the paid media
  */
 class ExternalReplyInfo extends Entity
 {
+    /**
+     * @var PaidMediaInfo|null Optional. Message is a paid media purchase, information about the paid media
+     */
+    protected $paid_media;
     /**
      * {@inheritdoc}
      */
@@ -69,6 +74,7 @@ class ExternalReplyInfo extends Entity
             'location'             => Location::class,
             'poll'                 => Poll::class,
             'venue'                => Venue::class,
+            'paid_media'           => PaidMediaInfo::class,
         ];
     }
 }
